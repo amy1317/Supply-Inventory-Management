@@ -28,3 +28,13 @@ I decided to choose supply inventory management for this project because at my p
 
 ### Project Tracker
 [Trello project tracker]https://trello.com/b/V3KixfbW
+
+### Wireframes
+
+![alt text][img1]
+
+[img1]: https://raw.githubusercontent.com/kjswenso/planily-capstone/master/wireframes/View1.jpg "Wireframe View 1"
+
+![alt text][img2]
+
+[img2]: https://github.com/kjswenso/planily-capstone/blob/master/wireframes/View2.jpg?raw=true "Wireframe View 2"
