@@ -31,9 +31,9 @@ I decided to choose supply inventory management for this project because at my p
 
 ### Wireframes
 
-![alt text][pdf1]
+![alt text][img1]
 
-[pdf1]: https://github.com/amy1317/Supply-Inventory-Management/blob/master/Wireframes/Login.pdf
+[img1]: https://github.com/amy1317/Supply-Inventory-Management/blob/master/Wireframes/Login.jpeg?raw=true
 
 ![alt text][img2]
 
