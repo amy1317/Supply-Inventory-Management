@@ -31,10 +31,5 @@ I decided to choose supply inventory management for this project because at my p
 
 ### Wireframes
 
-![alt text][img1]
+https://github.com/amy1317/Supply-Inventory-Management/tree/master/Wireframes
 
-[img1]: https://github.com/amy1317/Supply-Inventory-Management/blob/master/Wireframes/Login.jpeg?raw=true
-
-![alt text][img2]
-
-[img2]: https://github.com/kjswenso/planily-capstone/blob/master/wireframes/View2.jpg?raw=true "Wireframe View 2"
