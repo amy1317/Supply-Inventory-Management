@@ -32,4 +32,9 @@ I decided to choose supply inventory management for this project because at my p
 ### Wireframes
 
 [Register](https://github.com/amy1317/Supply-Inventory-Management/blob/master/Wireframes/Register.pdf)
-[Login]
+[Login](https://github.com/amy1317/Supply-Inventory-Management/blob/master/Wireframes/Login.pdf)
+[Home](https://github.com/amy1317/Supply-Inventory-Management/blob/master/Wireframes/Home.pdf)
+[Supplies in Stock](https://github.com/amy1317/Supply-Inventory-Management/blob/master/Wireframes/List.In%20Stock.pdf)
+[Supplies in Use](https://github.com/amy1317/Supply-Inventory-Management/blob/master/Wireframes/List.In%20Use.pdf)
+[Supply Add Form](https://github.com/amy1317/Supply-Inventory-Management/blob/master/Wireframes/Add%20Form.pdf)
+
