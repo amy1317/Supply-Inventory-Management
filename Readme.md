@@ -27,7 +27,7 @@ I decided to choose supply inventory management for this project because at my p
 * Research the supply industry
 
 ### Project Tracker
-[Trello project tracker]https://trello.com/b/V3KixfbW
+[Trello project tracker](https://trello.com/b/V3KixfbW)
 
 ### Wireframes
 
