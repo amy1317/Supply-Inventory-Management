@@ -1,4 +1,4 @@
-package org.launchcode.Supply.Inventory.Management;
+package org.launchcode.SupplyInventoryManagement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
