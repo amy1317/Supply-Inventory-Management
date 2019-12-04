@@ -50,12 +50,11 @@ public class UserController {
 
         return "login";
     }
-}
 
 
+    @RequestMapping(value = "register", method = RequestMethod.GET)
+    private String register(Model model) {
 
-  /*  @RequestMapping(value="register", method = RequestMethod.GET)
-    public String register(Model model){
         model.addAttribute(new User());
         model.addAttribute("title", "Inventory Management");
 
@@ -65,13 +64,21 @@ public class UserController {
 
     // Process form input data
     @RequestMapping(value = "register", method = RequestMethod.POST)
-    public String register(Model model,User user, Errors errors) {
+    private String register(Model model, User newUser, Errors errors) {
+
+        if (errors.hasErrors()) {
+            model.addAttribute("title", "Register");
+            return "register";
+        }
+
+        userDao.save(newUser);
+        {
+            return "redirect:";
+        }
 
 
-    return "login";
-
-
-}*/
+    }
+}
 
 
 
