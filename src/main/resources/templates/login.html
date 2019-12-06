@@ -21,10 +21,13 @@
         <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
 
         <button class="btn btn-primary" type="submit">Login</button>
-        <button class="btn btn-primary" type="register">Register</button>
-        <!--<a th:href="@{/register}">Register</a>-->
-    </div>
+        <a th:href="@{/register}" button class="btn btn-primary" role="button">Register</a>
+
     </form>
+
+
 </div>
+<footer th:replace="fragments :: footer"></footer>
 </body>
+
 </html>

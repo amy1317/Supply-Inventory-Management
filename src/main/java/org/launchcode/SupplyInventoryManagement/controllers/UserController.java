@@ -32,10 +32,10 @@ public class UserController {
     }
 
     @RequestMapping(value = "login", method = RequestMethod.POST)
-    public String login(Model model, @ModelAttribute @Valid User user,
+    public String login(Model model, @ModelAttribute @Valid User newUser,
                         Errors errors, String verify) {
 
-        model.addAttribute(user);
+       /* model.addAttribute(user);
         boolean passwordsMatch = true;
         if (user.getPassword() == null || verify == null
                 || !user.getPassword().equals(verify)) {
@@ -48,6 +48,20 @@ public class UserController {
             return "home";
         }
 
+        return "login";*/
+        if (errors.hasErrors()) {
+            model.addAttribute("title", "Inventory Management");
+            return "login";
+        }
+
+        //if valid user return to main page with welcome message
+        User userEntity = userDao.findByEmail(newUser.getEmail());
+        if(userEntity != null && userEntity.getEmail().equalsIgnoreCase(newUser.getEmail())){
+            return "home";}
+
+// if invalid user or wrong password redirect him to login page with invalidcredentials prompt
+        model.addAttribute("login", "Invalid Credentials ");
+        newUser.setPassword("");
         return "login";
     }
 
@@ -64,7 +78,21 @@ public class UserController {
 
     // Process form input data
     @RequestMapping(value = "register", method = RequestMethod.POST)
-    private String register(Model model, User newUser, Errors errors) {
+    private String register(Model model, User newUser, Errors errors, String verify) {
+
+        model.addAttribute(newUser);
+        /*boolean passwordsMatch = true;
+        if (newUser.getPassword() == null || verify == null
+                || !newUser.getPassword().equals(verify)) {
+            passwordsMatch = false;
+            newUser.setPassword("");
+            model.addAttribute("verifyError", "Passwords must match");
+        }
+
+        if (!errors.hasErrors() && passwordsMatch) {
+            model.addAttribute("title", "Register");
+            return "login";*/
+
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Register");
@@ -72,13 +100,27 @@ public class UserController {
         }
 
         userDao.save(newUser);
-        {
-            return "redirect:";
-        }
-
+        return "login";
 
     }
+
+    @RequestMapping(value = "home", method = RequestMethod.GET)
+    public String home(Model model) {
+
+        model.addAttribute("title", "Inventory Management");
+
+        return "home";
+    }
+    /*@RequestMapping(value = "home", method = RequestMethod.POST)
+    public String home(Model model) {
+
+        model.addAttribute("title", "Inventory Management");
+    }*/
+
 }
+
+
+
 
 
 

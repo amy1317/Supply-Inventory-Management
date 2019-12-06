@@ -1,0 +1,61 @@
+<!--<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+
+</body>
+
+
+
+<footer th:replace="fragments :: footer"></footer>
+</html>-->
+
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+    <script type="text/javascript">
+    window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		theme: "light2",
+		title:{
+			text: "Supplies in stock"
+		},
+		data: [
+		{
+			type: "pie",
+			showInLegend: true,
+			toolTipContent: "{y} - #percent %",
+			yValueFormatString: "#,##0,,.## Million",
+			legendText: "{indexLabel}",
+			dataPoints: [
+				{  y: 4181563, indexLabel: "Paper" },
+				{  y: 2175498, indexLabel: "Plastic" },
+				{  y: 3125844, indexLabel: "Chemicals" },
+				{  y: 1176121, indexLabel: "Misc"},
+
+			]
+		}
+		]
+	});
+	chart.render();
+}
+</script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+</body>
+
+<footer th:replace="fragments :: footer"></footer>
+</html>

@@ -7,15 +7,18 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<form class="form-horizontal" action='' method="POST">
+<!--<form class="form-horizontal" action='' method="POST">
+    <div class="alert alert-danger" role="alert" th:if="${param.error}">
+        The email or password is incorrect!
+    </div>
+
     <fieldset>
         <div id="legend">
             <legend class="">Register</legend>
         </div>
 
-
         <div class="control-group">
-            <!-- E-mail -->
+
             <label class="control-label" for="email">E-mail</label>
             <div class="controls">
                 <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
@@ -24,7 +27,7 @@
         </div>
 
         <div class="control-group">
-            <!-- Password-->
+
             <label class="control-label" for="password">Password</label>
             <div class="controls">
                 <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
@@ -33,7 +36,7 @@
         </div>
 
         <div class="control-group">
-            <!-- Password -->
+
             <label class="control-label"  for="password_confirm">Password (Confirm)</label>
             <div class="controls">
                 <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
@@ -42,11 +45,35 @@
         </div>
 
         <div class="control-group">
-            <!-- Button -->
+
             <div class="controls">
                 <button class="btn btn-primary">Register</button>
-                <button class="btn btn-primary">Cancel</button>
+                <a th:href="@{/login}" class="btn btn-primary" role="button">Cancel</a>
             </div>
         </div>
     </fieldset>
 </form>
+<footer th:replace="fragments :: footer"></footer>
+
+
+</body>
+
+</html>-->
+
+<div class="container">
+    <div class="alert alert-danger" role="alert" th:if="${param.error}">
+        The email or password is incorrect!
+    </div>
+    <form th:action="@{/register}" method="post" >
+        <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+        <label for="Email" class="sr-only">Email</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Email" required autofocus>
+        <label for="Password" class="sr-only">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        <label for="Password" class="sr-only">Password</label>
+        <input type="password" id="verify_password" name="verify_password" class="form-control" placeholder="Verify Password" required>
+        <button class="btn btn-primary" type="submit">Register</button>
+        <a th:href="@{/login}" button class="btn btn-primary" role="button">Cancel</a>
+       <!-- <a th:href="@{/register}" button class="btn btn-primary" role="button">Cancel</a>-->
+
+    </form>

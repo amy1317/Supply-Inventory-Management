@@ -22,15 +22,19 @@ public class User {
     private String email;
 
     @NotNull
-    @Size(min=5, message = "Password must be at least 5 characters long")
+    @Size(min = 5, message = "Password must be at least 5 characters long")
     private String password;
+
+
 
     public User(String email, String password) {
         this.email = email;
         this.password = password;
+
     }
 
-    public User() {}
+    public User() {
+    }
 
     public String getEmail() {
 

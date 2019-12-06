@@ -1,10 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form class="form-horizontal" action='' method="POST">
+    <div class="alert alert-danger" role="alert" th:if="${param.error}">
+        The email or password is incorrect!
+    </div>
+
+    <fieldset>
+        <div id="legend">
+            <legend class="">Add Supply</legend>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="product_name">Product Name</label>
+            <div class="controls">
+                <input type="text" id="product_name" name="product_name" placeholder="" class="input-xlarge">
+                <!--<p class="help-block">Please provide your E-mail</p>-->
+            </div>
+        </div>
+        <label>Category</label>
+        <select id = "myList">
+            <option value = "1">Paper</option>
+            <option value = "2">Plastic</option>
+            <option value = "3">Chemical</option>
+            <option value = "4">Misc</option>
+        </select>
+
+        <!--<div class="control-group">
+            <label class="control-label" for="category">Password</label>
+            <div class="controls">
+                <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                <p class="help-block">Password should be at least 4 characters</p>
+            </div>-->
+        </div>
+
+        <div class="control-group">
+            <label class="control-label"  for="supply_manufacturer">Supply Manufacturer</label>
+            <div class="controls">
+                <input type="text" id="supply_manufacturer" name="supply_manufacturer" placeholder="" class="input-xlarge">
+               <!--<p class="help-block">Please confirm password</p>-->
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label"  for="company">Company</label>
+            <div class="controls">
+                <input type="text" id="company" name="company" placeholder="" class="input-xlarge">
+                <!--<p class="help-block">Please confirm password</p>-->
+            </div>
+        </div>
+
+        <div class="control-group">
+        <label class="control-label"  for="company_representative">Company Representative</label>
+        <div class="controls">
+            <input type="text" id="company_representative" name="company_representative" placeholder="" class="input-xlarge">
+            <!--<p class="help-block">Please confirm password</p>-->
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label"  for="company_phone_number">Company Phone Number</label>
+            <div class="controls">
+                <input type="text" id="company_phone_number" name="company_phone_number" placeholder="" class="input-xlarge">
+                <!--<p class="help-block">Please confirm password</p>-->
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label"  for="quantity">Quantity</label>
+            <div class="controls">
+                <input type="text" id="quantity" name="quantity" placeholder="" class="input-xlarge">
+                <!--<p class="help-block">Please confirm password</p>-->
+            </div>
+            <label>Quantity</label>
+            <select id = "myList">
+                <option value = "1">per case of 6</option>
+                <option value = "2">Each</option>
+                <option value = "3">per case of 12</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label"  for="cost">Cost</label>
+            <div class="controls">
+                <input type="text" id="cost" name="cost" placeholder="" class="input-xlarge">
+                <!--<p class="help-block">Please confirm password</p>-->
+            </div>
+        </div>
+
+        <div class="control-group">
+            <!-- Button -->
+            <div class="controls">
+                <button class="btn btn-primary">Enter</button>
+                <a th:href="@{/stock}" class="btn btn-primary" role="button">Cancel</a>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<footer th:replace="fragments :: footer"></footer>
+
 
 </body>
+
 </html>
