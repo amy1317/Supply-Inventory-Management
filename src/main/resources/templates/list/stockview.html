@@ -24,17 +24,17 @@
 
                 </tr>
 
-                <tr th:each="category : ${categories}">
-                        <td th:text="${productName}"></td>
-                        <td th:text="${category}"></td>
-                        <td th:text="${supplyManufacturer}"></td>
-                        <td th:text="${company}"></td>
-                        <td th:text="${companyRepresentative}"></td>
-                        <td th:text="${companyPhoneNumber}"></td>
-                        <td th:text="${quantity}"></td>
-                        <td th:text="${caseQuantity}"></td>
-                        <td th:text="${cost}"></td>
-                        <li th:each="category : ${supplies}" th:text="${supplies.productName}">
+                <tr th:each="supplies : ${supplies}">
+                        <td th:text="${supplies.productName}"></td>
+                        <td th:text="${supplies.categoryName}"></td>
+                        <td th:text="${supplies.supplyManufacturer}"></td>
+                        <td th:text="${supplies.company}"></td>
+                        <td th:text="${supplies.companyRepresentative}"></td>
+                        <td th:text="${supplies.companyPhoneNumber}"></td>
+                        <td th:text="${supplies.quantity}"></td>
+                        <td th:text="${supplies.caseQuantity}"></td>
+                        <td th:text="${supplies.cost}"></td>
+
                 </tr>
 
         </table>

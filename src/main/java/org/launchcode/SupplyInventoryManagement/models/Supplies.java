@@ -3,6 +3,7 @@ package org.launchcode.SupplyInventoryManagement.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -13,24 +14,27 @@ public class Supplies {
     @GeneratedValue
     private int id;
 
+    @ManyToOne
+    private User owner;
+
     @NotNull
-    @Size(min = 3, message = "Product_name must be at least 3 characters long")
+    @Size(min = 3, message = "productName must be at least 3 characters long")
     private String productName;
 
     @NotNull
-    @Size(min = 3, message = "Product_name must be at least 3 characters long")
+//    @Size(min = 3, message = "Product_name must be at least 3 characters long")
     private String categoryName;
 
     @NotNull
-    @Size(min = 3, message = "Product_name must be at least 3 characters long")
+    @Size(min = 3, message = "supplyManufacturer must be at least 3 characters long")
     private String supplyManufacturer;
 
     @NotNull
-    @Size(min = 3, message = "Product_name must be at least 3 characters long")
+    @Size(min = 3, message = "company must be at least 3 characters long")
     private String company;
 
     @NotNull
-    @Size(min = 3, message = "Product_name must be at least 3 characters long")
+    @Size(min = 3, message = "companyRepresentative must be at least 3 characters long")
     private String companyRepresentative;
 
     @NotNull
@@ -40,7 +44,7 @@ public class Supplies {
     private Integer quantity;
 
     @NotNull
-    @Size(min = 3, message = "Product_name must be at least 3 characters long")
+    @Size(min = 3, message = "caseQuantity must be at least 3 characters long")
     private String caseQuantity;
 
     @NotNull

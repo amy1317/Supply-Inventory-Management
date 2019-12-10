@@ -24,6 +24,9 @@ public class SuppliesController {
     @Autowired
     private SuppliesDao suppliesDao;
 
+    @Autowired
+    private UserDao userDao;
+
 
     @RequestMapping(value = "/list/stock", method = RequestMethod.GET)
     private String stock(Model model) {

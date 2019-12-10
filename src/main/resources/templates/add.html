@@ -6,10 +6,7 @@
 <h1 th:text="${title}">Default Title</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
-<div class="container">
-    <div class="alert alert-danger" role="alert" th:if="${param.error}">
-        The email or password is incorrect!
-    </div>
+
 <form class="form-horizontal" action='' method="POST">
     <fieldset>
         <div id="legend">
@@ -88,7 +85,7 @@
                 <!--<p class="help-block">Please confirm password</p>-->
             </div>
         </div>
-
+<br>
         <div class="control-group">
             <!-- Button -->
             <div class="controls">
@@ -104,3 +101,26 @@
 <footer th:replace="fragments :: footer"></footer>
 </body>
 </html>
+
+<!--<div class="container">-->
+<!--    <div class="alert alert-danger" role="alert" th:if="${param.error}">-->
+<!--        Invalid email and password!-->
+<!--    </div>-->
+<!--    <div th:if="${param.logout}" class="alert alert-success">-->
+<!--        You have been logged out-->
+<!--    </div>-->
+<!--    <form th:action="@{/add}" method="post" >-->
+<!--        <h1 class="h3 mb-3 font-weight-normal">Add Supply</h1>-->
+<!--        <br>-->
+<!--        <label for="productName" >Product Name</label>-->
+<!--        <input type="text" id="productName" name="productName" class="input-xlarge"  required autofocus>-->
+<!--        <label>Category</label>-->
+<!--                <select name = "categoryName">-->
+<!--                    <option value = "paper" text = "paper">Paper</option>-->
+<!--                    <option value = "plastic" text = "plastic">Plastic</option>-->
+<!--                    <option value = "chemical" text = "chemical">Chemical</option>-->
+<!--                    <option value = "misc" text = "misc">Misc</option>-->
+<!--                </select>-->
+<!--        </br>-->
+<!--        <label for="supplyName" >Supply Name</label>-->
+<!--        <input type="text" id="supplyName" name="supplyName" class="input-xlarge"  required autofocus>-->
