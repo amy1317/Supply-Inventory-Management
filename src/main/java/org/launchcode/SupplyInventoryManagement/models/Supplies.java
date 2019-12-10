@@ -15,14 +15,15 @@ public class Supplies {
 
     @NotNull
     @Size(min = 3, message = "Product_name must be at least 3 characters long")
-    private String product_name;
-
-    @NotNull
-    private String category_name;
+    private String productName;
 
     @NotNull
     @Size(min = 3, message = "Product_name must be at least 3 characters long")
-    private String supply_manufacturer;
+    private String categoryName;
+
+    @NotNull
+    @Size(min = 3, message = "Product_name must be at least 3 characters long")
+    private String supplyManufacturer;
 
     @NotNull
     @Size(min = 3, message = "Product_name must be at least 3 characters long")
@@ -30,59 +31,61 @@ public class Supplies {
 
     @NotNull
     @Size(min = 3, message = "Product_name must be at least 3 characters long")
-    private String company_representative;
+    private String companyRepresentative;
 
     @NotNull
-    @Size(min = 3, message = "Product_name must be at least 3 characters long")
-    private Integer company_phone_number;
+    private String companyPhoneNumber;
 
     @NotNull
-    @Size(min = 3, message = "Product_name must be at least 3 characters long")
     private Integer quantity;
 
     @NotNull
     @Size(min = 3, message = "Product_name must be at least 3 characters long")
+    private String caseQuantity;
+
+    @NotNull
     private Integer cost;
 
 
 
-    public Supplies(String product_name, String category_name, String supply_manufacturer, String company, String company_representative,
-                    Integer company_phone_number, Integer quantity, Integer cost) {
-        this.product_name = product_name;
-        this.category_name = category_name;
-        this.supply_manufacturer = supply_manufacturer;
+    public Supplies(String productName, String categoryName, String supplyManufacturer, String company, String companyRepresentative,
+                    String companyPhoneNumber, Integer quantity, String caseQuantity, Integer cost) {
+        this.productName = productName;
+        this.categoryName = categoryName;
+        this.supplyManufacturer = supplyManufacturer;
         this.company = company;
-        this.company_representative = company_representative;
-        this.company_phone_number = company_phone_number;
+        this.companyRepresentative = companyRepresentative;
+        this.companyPhoneNumber = companyPhoneNumber;
         this.quantity = quantity;
+        this.caseQuantity = caseQuantity;
         this.cost = cost;
     }
 
     public Supplies() {
     }
 
-    public String getProduct_name() {
-        return product_name;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public String getCategory_name() {
-        return category_name;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setCategory_name(String category_name) {
-        this.category_name = category_name;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
-    public String getSupply_manufacturer() {
-        return supply_manufacturer;
+    public String getSupplyManufacturer() {
+        return supplyManufacturer;
     }
 
-    public void setSupply_manufacturer(String supply_manufacturer) {
-        this.supply_manufacturer = supply_manufacturer;
+    public void setSupplyManufacturer(String supplyManufacturer) {
+        this.supplyManufacturer = supplyManufacturer;
     }
 
     public String getCompany() {
@@ -93,20 +96,20 @@ public class Supplies {
         this.company = company;
     }
 
-    public String getCompany_representative() {
-        return company_representative;
+    public String getCompanyRepresentative() {
+        return companyRepresentative;
     }
 
-    public void setCompany_representative(String company_representative) {
-        this.company_representative = company_representative;
+    public void setCompanyRepresentative(String companyRepresentative) {
+        this.companyRepresentative = companyRepresentative;
     }
 
-    public Integer getCompany_phone_number() {
-        return company_phone_number;
+    public String getCompanyPhoneNumber() {
+        return companyPhoneNumber;
     }
 
-    public void setCompany_phone_number(Integer company_phone_number) {
-        this.company_phone_number = company_phone_number;
+    public void setCompanyPhoneNumber(String companyPhoneNumber) {
+        this.companyPhoneNumber = companyPhoneNumber;
     }
 
     public Integer getQuantity() {
@@ -115,6 +118,14 @@ public class Supplies {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public String getCaseQuantity() {
+        return caseQuantity;
+    }
+
+    public void setCaseQuantity(String caseQuantity) {
+        this.caseQuantity = caseQuantity;
     }
 
     public Integer getCost() {

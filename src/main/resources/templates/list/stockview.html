@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form class="form-horizontal" action='' method="POST">
+
+        <table class="table">
+
+                <tr>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Supply Manufacturer</th>
+                        <th>Company</th>
+                        <th>Company Representative</th>
+                        <th>Company Phone Number</th>
+                        <th>Quantity</th>
+                        <th>Quantity</th>
+                        <th>Cost</th>
+
+                </tr>
+
+                <tr th:each="category : ${categories}">
+                        <td th:text="${productName}"></td>
+                        <td th:text="${category}"></td>
+                        <td th:text="${supplyManufacturer}"></td>
+                        <td th:text="${company}"></td>
+                        <td th:text="${companyRepresentative}"></td>
+                        <td th:text="${companyPhoneNumber}"></td>
+                        <td th:text="${quantity}"></td>
+                        <td th:text="${caseQuantity}"></td>
+                        <td th:text="${cost}"></td>
+                        <li th:each="category : ${supplies}" th:text="${supplies.productName}">
+                </tr>
+
+        </table>
+
+
+</form>
+        <footer th:replace="fragments :: footer"></footer>
+</body>
+</html>

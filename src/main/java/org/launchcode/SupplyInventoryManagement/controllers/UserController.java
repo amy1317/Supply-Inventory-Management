@@ -50,16 +50,18 @@ public class UserController {
 
         return "login";*/
         if (errors.hasErrors()) {
-            model.addAttribute("title", "Inventory Management");
+           model.addAttribute("title", "Inventory Management");
             return "login";
         }
 
         //if valid user return to main page with welcome message
         User userEntity = userDao.findByEmail(newUser.getEmail());
-        if(userEntity != null && userEntity.getEmail().equalsIgnoreCase(newUser.getEmail())){
-            return "home";}
+        model.addAttribute("title", "Inventory Management");
+        if (userEntity != null && userEntity.getEmail().equalsIgnoreCase(newUser.getEmail())) {
+            return "home";
+        }
 
-// if invalid user or wrong password redirect him to login page with invalidcredentials prompt
+// if invalid user or wrong password redirect him to login page with invalid credentials prompt
         model.addAttribute("login", "Invalid Credentials ");
         newUser.setPassword("");
         return "login";
@@ -96,7 +98,7 @@ public class UserController {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Register");
-            return "register";
+            return "redirect:/register";
         }
 
         userDao.save(newUser);
@@ -111,12 +113,17 @@ public class UserController {
 
         return "home";
     }
+
     /*@RequestMapping(value = "home", method = RequestMethod.POST)
     public String home(Model model) {
 
         model.addAttribute("title", "Inventory Management");
     }*/
-
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout(HttpServletRequest request) {
+        request.getSession().invalidate();
+        return "redirect:/login";
+    }
 }
 
 

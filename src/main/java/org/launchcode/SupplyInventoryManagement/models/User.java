@@ -17,12 +17,12 @@ public class User {
     @GeneratedValue
     private int id;
 
-
+    @NotNull
     @Email(message = "Invalid email address")
     private String email;
 
     @NotNull
-    @Size(min = 5, message = "Password must be at least 5 characters long")
+    @Size(min = 5, max=12, message = "Password must be at least 5 characters long")
     private String password;
 
 
@@ -30,6 +30,7 @@ public class User {
     public User(String email, String password) {
         this.email = email;
         this.password = password;
+        this.id = id;
 
     }
 
@@ -56,5 +57,8 @@ public class User {
         this.password = password;
     }
 
+    public int getId(){
+        return id;
+    }
 }
 

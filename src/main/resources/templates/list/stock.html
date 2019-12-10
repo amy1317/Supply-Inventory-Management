@@ -7,5 +7,49 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
+<form class="form-horizontal" action='' method="POST">
+    <br>
+        <div id="legend">
+            <legend class="">Supply Categories</legend>
+        </div>
+        <br>
+        <div class="control-group">
+            <div class="text-center">
+            <label class="control-label">Paper</label>
+
+            <a th:href="@{/list/stockview}" button class="btn btn-primary" type="submit">View</button></a>
+            <a th:href="@{/add}" button class="btn btn-primary" type="submit">Add</button></a>
+            </div>
+        </div>
+        </br>
+        <br>
+        <div class="control-group">
+            <div class="text-center">
+            <label class="control-label">Plastic</label>
+            <a th:href="@{/list/stockview}" button class="btn btn-primary" type="submit">View</button></a>
+            <a th:href="@{/add}" button class="btn btn-primary" type="submit">Add</button></a>
+        </div>
+        </br>
+        <br>
+        <div class="control-group">
+            <div class="text-center">
+            <label class="control-label">Chemicals</label>
+            <a th:href="@{/list/stockview}" button class="btn btn-primary" type="submit">View</button></a>
+            <a th:href="@{/add}" button class="btn btn-primary" type="submit">Add</button></a>
+        </div>
+        </br>
+        <br>
+        <div class="control-group">
+            <div class="text-center">
+            <label class="control-label">Misc</label>
+            <a th:href="@{/list/stockview}" button class="btn btn-primary" type="submit">View</button></a>
+            <a th:href="@{/add}" button class="btn btn-primary" type="submit">Add</button></a>
+        </div>
+        </br>
+    </fieldset>
+</form>
+
 
 <footer th:replace="fragments :: footer"></footer>
+</body>
+</html>
