@@ -56,16 +56,17 @@ public class SuppliesController {
     private String add(Model model, @ModelAttribute @Valid Supplies supplies, Errors errors) {
 
         model.addAttribute(supplies);
-//       / if (errors.hasErrors()) {
-//            model.addAttribute("title", "Inventory Management");
-//            return "add";
+        if (errors.hasErrors()) {
+            model.addAttribute("title", "Inventory Management");
+            return "redirect:/add";
+        }
+
+            suppliesDao.save(supplies);
+            return "list/stock";
 
 
-        suppliesDao.save(supplies);
-        return "list/stock";
+        }
 
-
-    }
 
     @RequestMapping(value = "/list/stockview", method = RequestMethod.GET)
     private String stockview(Model model) {
@@ -78,18 +79,17 @@ public class SuppliesController {
     }
 
     @RequestMapping(value = "/list/stockview", method = RequestMethod.POST)
-    public String stockview(@ModelAttribute @Valid Supplies newSupplies,
+    private String stockview(@ModelAttribute @Valid Supplies newSupplies,
                             Errors errors, @RequestParam int categoryID, Model model) {
 
-        if (errors.hasErrors()) {
-            model.addAttribute("title", "Inventory Management");
-            return "redirect:";
+
+         model.addAttribute("title", "Inventory Management");
+          return "redirect:";
         }
 
-        return "redirect:";
+
 
     }
-}
 
 
 

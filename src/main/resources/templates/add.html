@@ -8,15 +8,20 @@
 <nav th:replace="fragments :: navigation"></nav>
 
 <form class="form-horizontal" action='' method="POST">
+
+
     <fieldset>
         <div id="legend">
             <legend class="">Add Supply</legend>
+        </div>
+        <div class="alert alert-danger" role="alert" th:if="${param.error}">
+            Invalid Entry!
         </div>
 
         <div class="control-group">
             <label class="control-label" for="productName">Product Name</label>
             <div class="controls">
-                <input type="text" id="productName" name="productName" placeholder="" class="input-xlarge">
+                <input type="text" required id="productName" name="productName" placeholder="" class="input-xlarge" >
                 <!--<p class="help-block">Please provide your E-mail</p>-->
 
         <label>Category</label>
@@ -33,7 +38,7 @@
         <div class="control-group">
             <label class="control-label"  for="supplyManufacturer">Supply Manufacturer</label>
             <div class="controls">
-                <input type="text" id="supplyManufacturer" name="supplyManufacturer" placeholder="" class="input-xlarge">
+                <input type="text" required id="supplyManufacturer" name="supplyManufacturer" placeholder="" class="input-xlarge">
                <!--<p class="help-block">Please confirm password</p>-->
             </div>
         </div>
@@ -41,7 +46,7 @@
         <div class="control-group">
             <label class="control-label"  for="company">Company</label>
             <div class="controls">
-                <input type="text" id="company" name="company" placeholder="" class="input-xlarge">
+                <input type="text" required id="company" name="company" placeholder="" class="input-xlarge" >
                 <!--<p class="help-block">Please confirm password</p>-->
             </div>
         </div>
@@ -49,7 +54,7 @@
         <div class="control-group">
         <label class="control-label"  for="companyRepresentative">Company Representative</label>
         <div class="controls">
-            <input type="text" id="companyRepresentative" name="companyRepresentative" placeholder="" class="input-xlarge">
+            <input type="text" required id="companyRepresentative" name="companyRepresentative" placeholder="" class="input-xlarge" >
             <!--<p class="help-block">Please confirm password</p>-->
             </div>
         </div>
@@ -58,7 +63,7 @@
             <div class="control-group">
                 <label class="control-label"  for="companyPhoneNumber">Company Phone Number</label>
                 <div class="controls">
-                    <input type="text" id="companyPhoneNumber" name="companyPhoneNumber" placeholder="" class="input-xlarge">
+                    <input type="text" required id="companyPhoneNumber" name="companyPhoneNumber" placeholder="" class="input-xlarge">
                     <!--<p class="help-block">Please confirm password</p>-->
                 </div>
             </div>
@@ -66,7 +71,7 @@
         <div class="control-group">
             <label class="control-label"  for="quantity">Quantity</label>
             <div class="controls">
-                <input type="text" id="quantity" name="quantity" placeholder="" class="input-xlarge">
+                <input type="text" required id="quantity" name="quantity" placeholder="" class="input-xlarge" >
                 <!--<p class="help-block">Please confirm password</p>-->
 
             <label>Case Quantity</label>
@@ -81,7 +86,7 @@
         <div class="control-group">
             <label class="control-label"  for="cost">Cost</label>
             <div class="controls">
-                <input type="text" id="cost" name="cost" placeholder="" class="input-xlarge">
+                <input type="text" required id="cost" name="cost" placeholder="" class="input-xlarge">
                 <!--<p class="help-block">Please confirm password</p>-->
             </div>
         </div>

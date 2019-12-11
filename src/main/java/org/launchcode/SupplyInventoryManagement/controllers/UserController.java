@@ -33,7 +33,7 @@ public class UserController {
 
     @RequestMapping(value = "login", method = RequestMethod.POST)
     public String login(Model model, @ModelAttribute @Valid User newUser,
-                        Errors errors, String verify) {
+                        Errors errors, String verify, HttpServletRequest request) {
 
        /* model.addAttribute(user);
         boolean passwordsMatch = true;
@@ -58,6 +58,9 @@ public class UserController {
         User userEntity = userDao.findByEmail(newUser.getEmail());
         model.addAttribute("title", "Inventory Management");
         if (userEntity != null && userEntity.getEmail().equalsIgnoreCase(newUser.getEmail())) {
+            //   might not need this   request.getSession().invalidate();
+//            request.getSession().setAttribute("email",userEntity.getEmail());
+//              look for more code
             return "home";
         }
 

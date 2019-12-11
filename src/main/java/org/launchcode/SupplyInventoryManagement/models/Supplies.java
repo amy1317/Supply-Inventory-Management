@@ -18,7 +18,7 @@ public class Supplies {
     private User owner;
 
     @NotNull
-    @Size(min = 3, message = "productName must be at least 3 characters long")
+    @Size(min = 3, message = "Product Name must be at least 3 characters long")
     private String productName;
 
     @NotNull
@@ -26,34 +26,36 @@ public class Supplies {
     private String categoryName;
 
     @NotNull
-    @Size(min = 3, message = "supplyManufacturer must be at least 3 characters long")
+    @Size(min = 3, message = "Supply Manufacturer must be at least 3 characters long")
     private String supplyManufacturer;
 
     @NotNull
-    @Size(min = 3, message = "company must be at least 3 characters long")
+    @Size(min = 3, message = "Company must be at least 3 characters long")
     private String company;
 
     @NotNull
-    @Size(min = 3, message = "companyRepresentative must be at least 3 characters long")
+    @Size(min = 3, message = "Company Representative must be at least 3 characters long")
     private String companyRepresentative;
 
     @NotNull
+    @Size(min = 9, message = "Company Phone Number must be at least 3 characters long")
     private String companyPhoneNumber;
 
     @NotNull
+//    @Size(min = 1, message = "Quantity must be at least 1 character long")
     private Integer quantity;
 
     @NotNull
-    @Size(min = 3, message = "caseQuantity must be at least 3 characters long")
     private String caseQuantity;
 
     @NotNull
-    private Integer cost;
+//    @Size(min = 1, message = "Quantity must be at least 1 character long")
+    private Double cost;
 
 
 
     public Supplies(String productName, String categoryName, String supplyManufacturer, String company, String companyRepresentative,
-                    String companyPhoneNumber, Integer quantity, String caseQuantity, Integer cost) {
+                    String companyPhoneNumber, Integer quantity, String caseQuantity, Double cost) {
         this.productName = productName;
         this.categoryName = categoryName;
         this.supplyManufacturer = supplyManufacturer;
@@ -132,11 +134,11 @@ public class Supplies {
         this.caseQuantity = caseQuantity;
     }
 
-    public Integer getCost() {
+    public Double getCost() {
         return cost;
     }
 
-    public void setCost(Integer cost) {
+    public void setCost(Double cost) {
         this.cost = cost;
     }
 }
